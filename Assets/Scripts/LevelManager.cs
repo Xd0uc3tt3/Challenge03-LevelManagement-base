@@ -5,13 +5,13 @@ public class LevelManager : MonoBehaviour
     public GameObject level01;
     public GameObject level02;
 
-    private Transform player;
+    private GameObject player;
 
     private GameObject currentActiveLevel;
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = ServiceHub.Instance.playerController.gameObject;
     }
 
     public void LevelChange(Transform spawnLocation)
@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
         //Yes i am aware of the obvious flaw in this code
 
-        player.position = spawnLocation.position;
+        player.transform.position = spawnLocation.position;
 
     }
 }

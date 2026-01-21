@@ -36,5 +36,14 @@ public class ServiceHub : MonoBehaviour
         }
 
         #endregion
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 }
