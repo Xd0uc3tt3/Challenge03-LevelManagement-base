@@ -16,7 +16,7 @@ public class ServiceHub : MonoBehaviour
 
     [Header("System References")]
     public PlayerController playerController;
-    public LevelManager levelManager;
+    public LevelManager LevelManager;
 
 
 
