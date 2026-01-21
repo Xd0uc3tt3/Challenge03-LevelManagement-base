@@ -12,22 +12,13 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         player = ServiceHub.Instance.playerController.gameObject;
+        currentActiveLevel = level01;
     }
 
-    public void LevelChange(Transform spawnLocation)
+    public void LevelChange(Transform spawnLocation, GameObject LevelToActivate)
     {
-        if (level01.activeInHierarchy && !level02.activeInHierarchy)
-        {
-            level01.SetActive(false);
-            level02.SetActive(true);
-        }
-        else if (!level01.activeInHierarchy && level02.activeInHierarchy)
-        {
-            level01.SetActive(true);
-            level02.SetActive(false);
-        }
-
-        //Yes i am aware of the obvious flaw in this code
+        currentActiveLevel.SetActive(false);
+        LevelToActivate.SetActive(true);
 
         player.transform.position = spawnLocation.position;
 
