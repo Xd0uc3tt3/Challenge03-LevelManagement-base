@@ -4,6 +4,8 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject level01;
     public GameObject level02;
+    public GameObject level03;
+    public GameObject level04;
 
     private GameObject player;
 
@@ -19,6 +21,7 @@ public class LevelManager : MonoBehaviour
     {
         currentActiveLevel.SetActive(false);
         LevelToActivate.SetActive(true);
+        currentActiveLevel = LevelToActivate;
 
         player.transform.position = spawnLocation.position;
 
